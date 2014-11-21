@@ -40,3 +40,5 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.3.0'
 
 gem 'active_model_serializers'
+
+gem 'faraday'

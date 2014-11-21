@@ -1,7 +1,7 @@
 require 'faraday'
 require 'active_support/all'
 
-conn = Faraday.new(:url => 'https://pizza-places.herokuapp.com/')
+conn = Faraday.new(:url => 'http://localhost:3000')
 
 10.times do
 
@@ -10,7 +10,7 @@ conn = Faraday.new(:url => 'https://pizza-places.herokuapp.com/')
 
 
   response = conn.post do |req|
-    req.url '/api/pizza_joints.json'
+    req.url '/api/artists.json'
     req.headers['Content-Type'] = 'application/json'
     req.body = {
       artists: {
