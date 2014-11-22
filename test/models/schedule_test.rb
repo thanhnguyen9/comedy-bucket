@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::VideosControllerTest < ActionController::TestCase
+class ScheduleTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

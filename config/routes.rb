@@ -28,5 +28,10 @@ Rails.application.routes.draw do
 
     delete '/videos/:id' => 'videos#destroy'
 
+
+    get '/schedules' => 'schedules#index'
+    post '/schedules' => 'schedules#create'
+    put '/schedules/:id' => 'schedules#update'
+
   end
 end
