@@ -2,9 +2,7 @@ Rails.application.routes.draw do
 
   root 'artists#index'
 
-  get 'artists/new' => 'artists#new'
-
-  post 'artists' => 'artists#create'
+  resources :artists
 
   get 'videos/new' => 'videos#new'
 
@@ -32,6 +30,7 @@ Rails.application.routes.draw do
     get '/schedules' => 'schedules#index'
     post '/schedules' => 'schedules#create'
     put '/schedules/:id' => 'schedules#update'
+    get '/schedules/:id' => 'schedules#show'
 
   end
 end

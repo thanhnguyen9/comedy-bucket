@@ -1,0 +1,36 @@
+
+  <% @links.each do |link| %>
+    <% if current_user.id == link.user.id %>
+        <div class="col-md-3">
+          <%= link_to "#", data: {toggle: "modal", target: "#modal-image#{link.id}"} do %>
+          <%= image_tag link.photo.url(:thumb) %>
+          <%end%>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal-image<%= link.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Image <%= link.id %></h4>
+                </div>
+                <div class="modal-body">
+                  <%= link_to tags_path(id: link.id) do %>
+                    <%= image_tag link.photo.url(:large) %>
+                  <%end%>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <a href="#" tabindex="0" class="btn btn-lg btn-success" role="button" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="Click the photo to tag">Tag</a>
+                  </div>
+                 <br>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      <%end%>
+  <%end%>

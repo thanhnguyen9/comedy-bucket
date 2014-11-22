@@ -8,14 +8,14 @@ class Api::SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.new(params.require(:schedules).permit(:place_name, :time, :location, :artist_id))
+    @schedule = Schedule.new(params.require(:schedules).permit(:place_name, :time, :location, :artist_id, :lat, :lng))
     @schedule.save
     render json: @schedule
   end
 
   def update
     @schedule = Schedule.find(params[:id])
-    @schedule = Schedule.update(params.require(:schedules).permit(:place_name, :time, :location, :artist_id))
+    @schedule = Schedule.update(params.require(:schedules).permit(:place_name, :time, :location, :artist_id, :lat, :lng))
     render json: @schedule
   end
 
@@ -23,5 +23,10 @@ class Api::SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     @schedule.delete
     render json: {ok: true}
+  end
+
+  def show
+    @schedule = Schedule.find(params[:id])
+    render json: @schedule
   end
 end

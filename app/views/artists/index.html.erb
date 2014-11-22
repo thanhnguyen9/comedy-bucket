@@ -1,13 +1,9 @@
 <h1>Artists#index</h1>
 <p>Find me in app/views/artists/index.html.erb</p>
-
-<!-- 
-<script>
-
-  $.getJSON("/api/videos")
- .done(function(data){
-  data.videos.forEach(function(video){
-    console.log(video)
-  });
-});
-</script> -->
+<% @artists.each do |artist| %>
+  <ul>
+    <li><%= link_to artist.name, artist_path(artist) %></li>
+  </ul>
+<%end%>
+<h1>Hola</h1>
+<div id="map"></div>
