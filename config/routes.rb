@@ -17,5 +17,16 @@ Rails.application.routes.draw do
 
     put '/artists/:id' => 'artists#update'
 
+    delete '/artists/:id' => 'artists#destroy'
+
+
+    get '/videos' => 'videos#index'
+
+    post '/videos' => 'videos#create'
+
+    put '/videos/:id' => 'videos#update'
+
+    delete '/videos/:id' => 'videos#destroy'
+
   end
 end
