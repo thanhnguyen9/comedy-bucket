@@ -1,8 +1,42 @@
-<h1>Artists#index</h1>
-<p>Find me in app/views/artists/index.html.erb</p>
-<% @artists.each do |artist| %>
-  <ul>
-    <li><%= link_to artist.name, artist_path(artist) %></li>
-  </ul>
-<%end%>
-<h1>Hola</h1>
+<div class="row">
+
+
+                    <hr>
+                    <h2 class="intro-text text-center">Pick an
+                        <strong>artist</strong>
+                    </h2>
+                    <hr>
+
+                    <hr class="visible-xs">
+                    <div class="col-md-12">
+                      <% @artists.each do |artist| %>
+
+                          <%= link_to artist_path(artist), data: {toggle: "modal", target: "#<%= artist.id %>"} do %>
+                            <%= image_tag artist.photo %>
+                          <%end%>
+
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="<%= artist.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel"><%= artist.name %></h4>
+                        </div>
+                        <div class="modal-body">
+                          <%= artist.info %>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                      <%end%>
+                  </div>
+
+
+        </div>

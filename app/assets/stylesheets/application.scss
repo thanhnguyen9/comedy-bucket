@@ -1,8 +1,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "header";
+@import "footer";
+
+
+#map {height: 450px}
 
 body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: url('http://i.imgur.com/po05Xs0.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 70px;
+    margin: 0 auto;
+}
 
-  padding-top: 70px;
+.navbar {margin-top: -5em}
+
+img {width: 250px; height: 250px;
+  margin-bottom: 1.9em;
+  margin-left: 1.8em
+    }
+
+.row {
+  background: white;
+  opacity: 0.9;
   }
-#map {height: 450px}

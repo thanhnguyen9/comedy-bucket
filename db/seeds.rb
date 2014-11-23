@@ -20,17 +20,17 @@ artists = [
     },
   {
     name: "Gabriel Iglesias",
-    photo: "http://fluffyguy.com/wp-content/uploads/2012/02/photo-41.png",
+    photo: "http://ia.media-imdb.com/images/M/MV5BMzkxODc1NTcwOV5BMl5BanBnXkFtZTcwODQ3MTg2OQ@@._V1_SX214_CR0,0,214,317_AL_.jpg",
     info: "Gabriel Iglesias was born on July 15, 1976 in San Diego, California, USA as Gabriel J. Iglecias. He is an actor and producer, known for Gabriel Iglesias: Hot and Fluffy (2007), Magic Mike (2012) and The Fluffy Movie: Unity Through Laughter (2014)."
     },
   {
     name: "Bill Burr",
-    photo: "Bill Burr was born on June 10, 1968 in Canton, Massachusetts, USA. He is an actor and writer, known for Date Night (2010), Walk of Shame (2014) and Stand Up Guys (2012). He has been married to Nia Renee Hill since October 2013.",
+    photo: "http://ia.media-imdb.com/images/M/MV5BMTQwNDgwODg3NV5BMl5BanBnXkFtZTcwMTY5OTM3MQ@@._V1_SY317_CR10,0,214,317_AL_.jpg",
     info: "Bill Burr was born on June 10, 1968 in Canton, Massachusetts, USA. He is an actor and writer, known for Date Night (2010), Walk of Shame (2014) and Stand Up Guys (2012). He has been married to Nia Renee Hill since October 2013."
     },
   {
     name: "Bill Cosby",
-    photo: "Bill Burr was born on June 10, 1968 in Canton, Massachusetts, USA. He is an actor and writer, known for Date Night (2010), Walk of Shame (2014) and Stand Up Guys (2012). He has been married to Nia Renee Hill since October 2013.",
+    photo: "http://ia.media-imdb.com/images/M/MV5BMTY2NTEwNTEwMV5BMl5BanBnXkFtZTcwNDA1NDQ2Mw@@._V1_SY317_CR11,0,214,317_AL_.jpg",
     info: "Bill Cosby is one of the world's most respected and well-known entertainers and comedians. William Henry Cosby, Jr. was born on July 12, 1937, in Philadelphia, Pennsylvania, to Anna Pearl (Hite), a maid, and William Henry Cosby, Sr., a U.S. Navy sailor. After tenth grade, Cosby joined the Navy and completed high school through a correspondence ..."
     },
   {
