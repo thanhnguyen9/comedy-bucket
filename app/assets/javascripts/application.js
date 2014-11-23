@@ -13,7 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery
+//= require bootstrap-sprockets
 //= require_tree .
+
 
 $(window).ready(function(){
 
@@ -27,7 +30,7 @@ $(window).ready(function(){
     id: 'examples.map-i875mjb7'
   }).addTo(window.map);
 
-  
+
 
   $.getJSON("/api/schedules")
    .done(function(data){
