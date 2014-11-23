@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "header";
 @import "footer";
+@import "modal";
 
 
 #map {height: 450px}
@@ -28,5 +29,3 @@ img {width: 250px; height: 250px;
   background: white;
   opacity: 0.9;
   }
-
-.photo-in-modal {margin-left: 11em;}
