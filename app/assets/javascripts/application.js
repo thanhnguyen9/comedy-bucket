@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-$(window).ready(function(){
+$(document).ready(function(){
 
   window.map = L.map('map').setView([40.737, -93.923], 4);
 
@@ -29,21 +29,6 @@ $(window).ready(function(){
     'Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'examples.map-i875mjb7'
   }).addTo(window.map);
-
-
-
-  $.getJSON("/api/schedules")
-   .done(function(data){
-     console.log(data.schedules)
-    data.schedules.forEach(function(schedule){
-       if (schedule.artist_id == 1) {
-        console.log("h3");
-      }
-      L.marker([schedule.lat, schedule.lng])
-        .addTo(window.map)
-        .bindPopup(schedule.place_name);
-    });
-  });
 
 
 });
