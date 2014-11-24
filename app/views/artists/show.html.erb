@@ -1,4 +1,21 @@
 <div id="map"></div>
+<br><br>
+<div class="row">
+  <table class="table table-hover">
+    <tr>
+      <th>Date</th>
+      <th>Event</th>
+      <th>City</th>
+    </tr>
+    <% @schedules.each do |schedule| %>
+    <tr>
+        <td><%= schedule.time.strftime("%A, %d %b %Y %l:%M %p") %></td>
+        <td><%= schedule.place_name %></td>
+        <td><%= schedule.location %></td>
+    </tr>
+    <%end%>
+  </table>
+</div>
 
 
 <script>
