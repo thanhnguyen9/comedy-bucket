@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
   def index
     @artists = Artist.order(:name)
-    @artists = Artist.search(params[:search]) if params[:search].present?
+    @artists = Artist.search_by_name(params[:search]) if params[:search].present?
   end
 
   def show

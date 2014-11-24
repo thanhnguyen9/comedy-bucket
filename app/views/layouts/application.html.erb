@@ -42,13 +42,9 @@
                     </li>
 
                     <li>
-
-
-                  <%= form_tag root_path, method: :get, class: "navbar-form navbar-left search-box" do %>
-                    <%= text_field_tag :qs, params[:qs] %>
-                    <%= submit_tag "Search", class:"btn btn-default" %>
-                  <%end%>
-
+                      <%= form_tag root_path, method: :get do %>
+                        <%= text_field_tag :search, params[:search], class: "navbar-form navbar-left search-box", placeholder: "Search" %>
+                      <%end%>
                     </li>
                 </ul>
             </div>
