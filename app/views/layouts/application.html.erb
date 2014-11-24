@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Comedy Box</a>
+                <a class="navbar-brand" href="#">Comedy Box</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -42,12 +42,12 @@
                     </li>
 
                     <li>
-                      
+
 
                   <%= form_tag root_path, method: :get, class: "navbar-form navbar-left search-box" do %>
-                <%= text_field_tag :qs, params[:qs] %>
-                <%= submit_tag "Search", class:"btn btn-default" %>
-              <%end%>
+                    <%= text_field_tag :qs, params[:qs] %>
+                    <%= submit_tag "Search", class:"btn btn-default" %>
+                  <%end%>
 
                     </li>
                 </ul>

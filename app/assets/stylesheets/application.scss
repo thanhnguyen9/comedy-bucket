@@ -5,7 +5,18 @@
 @import "modal";
 
 
-#map {height: 450px}
+#map {
+  min-width: 1000px;
+  height: 450px;
+  margin: 2em;
+  }
+@media (min-width: 500px) {
+  #map {
+    min-width: 400px;
+    height: 350px
+  }
+  img {text-align: center}
+}
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -28,8 +39,11 @@ img {width: 250px; height: 250px;
 .row {
   background: white;
   opacity: 0.9;
+
   }
 
 .btn.btn-default{color: black}
 
 a{color: black}
+
+#artist-name {display: none}

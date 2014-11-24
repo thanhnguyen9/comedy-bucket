@@ -7,14 +7,14 @@
                     </h2>
                     <hr>
 
-                    <hr class="visible-xs">
+                    
                     <br>
                     <div class="col-md-12">
                       <% @artists.each do |artist| %>
 
                           <%= link_to "#", data: {toggle: "modal", target: "#modal#{artist.id}"} do %>
                             <%= image_tag artist.photo %>
-
+                            <p id="artist-name"><%= artist.name %></p>
                           <%end%>
 
 
