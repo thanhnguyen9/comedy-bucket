@@ -1,1 +1,21 @@
-.thumbnail{margin-top: 1em}
+.thumbnail{
+  margin-top: 1em;
+  padding-left: 2em
+  }
+
+.thumbnail-image{
+  width: 8em;
+   height: 8em
+   }
+
+.thumbnail-on-side {
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  padding-top: 1em;
+  margin-left: -1em;
+  }
+.artist-name-on-side{font-size: 0.8em}
+
+.show-product {padding-left: 8em}
+
+.video-in-show-product {padding-left: 3em}

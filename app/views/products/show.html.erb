@@ -1,13 +1,25 @@
-<div class="row">
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <iframe width="320" height="349" src="<%= @product.embed(@product.url) %>" frameborder="0" allowfullscreen></iframe>
-      <div class="caption">
-        <p><%= @product.info %></p>
-        <p><%= link_to "Edit", edit_product_path(@product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %></p>
+<div class="row main-my-page show-product">
+  <div class="col-md-9">
+    <div class="col-sm-6 col-md-11">
+      <div class="thumbnail video-in-show-product">
+        <iframe width="550" height="550" src="<%= @product.embed(@product.url) %>" frameborder="0" allowfullscreen></iframe>
+        <div class="caption">
+          <p><%= @product.info %></p>
+          <p><%= link_to "Edit", edit_product_path(@product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %></p>
+        </div>
       </div>
     </div>
   </div>
 
+  <div class="col-md-3 thumbnail-on-side">
+
+    <% Video.all.each do |video| %>
+    <%= link_to artist_path(video.artist) do %>
+    <%= image_tag video.thumbnail(video.url), class: "thumbnail-image" %>
+    <span class="artist-name-on-side">
+      <%= video.artist.name %>
+    </span>
+    <%end%>
+    <%end%>
+  </div>
 </div>
