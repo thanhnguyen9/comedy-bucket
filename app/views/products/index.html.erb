@@ -1,8 +1,13 @@
 <div class="row">
-  <% @products.each do |product| %>
-    <%= product.inspect %>
-    <%= link_to "Edit", edit_product_path(product) %>
-    <%= link_to "Delete", product_path(product), method: :delete, data: {confirm: "Are you sure?"} %>
-  <%end%>
+<% @products.each do |product| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <iframe width="320" height="349" src="<%= product.embed(product.url) %>" frameborder="0" allowfullscreen></iframe>
+      <div class="caption">
+        <p><%= product.info %></p>
+        <p><%= link_to "Show", product_path(product), class: "btn btn-primary" %> <%= link_to "Edit", edit_product_path(product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>
-<%= current_user.id %>
