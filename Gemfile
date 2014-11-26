@@ -54,3 +54,5 @@ gem 'rails_12factor'
 gem 'pg_search'
 
 gem 'devise'
+
+gem 'simple_form'
