@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'artists#index'
 
   get 'artists' => 'artists#index'
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   get 'videos/new' => 'videos#new'
 
   post 'videos' => 'videos#create'
+
+  resources :products
 
   namespace :api do
     get '/artists' => 'artists#index'

@@ -33,14 +33,26 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <%= link_to "Home", root_path %>
+                    </li>
 
-                    </li>
-                    <li>
-                        <a href="blog.html">Sign In</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Sign Up</a>
-                    </li>
+                    <% if user_signed_in? %>
+                      <li>
+                        <%= link_to "Upload", new_product_path %>
+                      </li>
+                      <li>
+                        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                      </li>
+                    <%else%>
+                      <li>
+                        <%= link_to "My Page", products_path %>
+                      </li>
+                      <li>
+                          <%= link_to "Sign In", new_user_session_path %>
+                      </li>
+                      <li>
+                          <%= link_to "Sign Up", new_user_registration_path %>
+                      </li>
+                    <%end%>
 
                     <li>
                       <%= form_tag root_path, method: :get do %>
@@ -52,15 +64,18 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
+        <p><%= notice %></p>
+        <p><%= alert %></p>
     </nav>
 
   </header>
 
-<div class="container">
-  <%= yield %>
-</div>
-<br>
-<footer>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <br>
+
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
