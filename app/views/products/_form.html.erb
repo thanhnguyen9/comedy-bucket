@@ -1,5 +1,7 @@
 <%= simple_form_for @product do |f| %>
   <%= f.input :url, class: "form-control" %>
   <%= f.input :info, class: "form-group" %>
+  <%= f.association :user, :as => :hidden %>
+
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
