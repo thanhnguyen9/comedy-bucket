@@ -7,6 +7,7 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
     @schedules = Schedule.where(:artist_id => @artist.id).order(:time)
+    @videos = Video.where(:artist_id => @artist.id)
   end
 
   def new
