@@ -9,6 +9,18 @@
         </div>
       </div>
     </div>
+  <div>
+    <h1>Comment</h1>
+    <%= simple_form_for @comment, url: comments_path do |f| %>
+      <%= f.input :post %>
+      <%= f.association :user, :as => :hidden %>
+      <%= f.submit "Comment", class: "btn btn-success" %>
+    <%end%>
+
+  </div>
+    <% @comments.each do |comment| %>
+      <%= comment.post %><br>
+    <%end%>
   </div>
 
   <%= render partial: "side" %>

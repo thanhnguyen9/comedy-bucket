@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'comments/new'
+
+  get 'comments/edit'
+
   get 'recommend/index'
 
   devise_for :users
@@ -21,8 +25,9 @@ Rails.application.routes.draw do
   post 'videos' => 'videos#create'
 
   resources :products
+  resources :comments
 
-  get 'recommend' => "recommend#index" 
+  get 'recommend' => "recommend#index"
 
   namespace :api do
     get '/artists' => 'artists#index'
