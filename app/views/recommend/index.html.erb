@@ -1,0 +1,22 @@
+
+<div class="row main-my-page">
+  <div class="col-md-9">
+
+    <div class="recommend-page">
+      <% @products.each do |product| %>
+        <div class="col-sm-3 col-md-3 recommend-thumbnail">
+          <div class="thumbnail">
+            <%= link_to product_path(product) do %>
+              <%= image_tag product.thumbnail(product.url), class: "recommend-image" %>
+              <div class="recommend-caption", style="margin-top: -1.5em; text-align: center ">
+                <p>Hola</p>
+              </div>
+            <%end%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render partial: "products/side" %>
+</div>

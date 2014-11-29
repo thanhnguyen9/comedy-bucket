@@ -34,8 +34,13 @@
                     <li>
                         <%= link_to "Home", root_path %>
                     </li>
+
                     <li>
                       <%= link_to "My Page", products_path %>
+                    </li>
+
+                    <li>
+                      <%= link_to "Recommend", recommend_path %>
                     </li>
 
                     <% if user_signed_in? %>
@@ -43,7 +48,7 @@
                         <%= link_to "Upload", new_product_path, data: {toggle: "modal", target: "#upload"} %>
 
 
-                    
+
 
                       <!-- Modal -->
                       <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

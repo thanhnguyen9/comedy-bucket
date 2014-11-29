@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'recommend/index'
+
   devise_for :users
+
   root 'artists#index'
 
   get 'artists' => 'artists#index'
@@ -18,6 +21,8 @@ Rails.application.routes.draw do
   post 'videos' => 'videos#create'
 
   resources :products
+
+  get 'recommend' => "recommend#index" 
 
   namespace :api do
     get '/artists' => 'artists#index'

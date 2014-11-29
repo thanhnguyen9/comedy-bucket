@@ -5,6 +5,7 @@
 @import "modal";
 @import "devise";
 @import "my_page";
+@import "recommend";
 
 #logo {font-family: 'Dancing Script', cursive; font-size: 1.5em}
 #map {
@@ -29,7 +30,7 @@ body {
     -o-background-size: cover;
     padding-top: 70px;
     margin: 0 auto;
-    
+
 }
 
 .navbar {margin-top: -5em}
