@@ -16,6 +16,22 @@
   }
 .artist-name-on-side{font-size: 0.8em}
 
-.show-product {padding-left: 8em}
+.show-product {}
 
-.video-in-show-product {padding-left: 3em}
+.video-in-show-product {
+  padding-left: 1em;
+  margin-left: 3em;
+ }
+#time {
+  color: #645858;
+  font-size: 10px;
+  margin-left: 2em
+  }
+#user-name {color: #2793e6}
+
+.comment {
+  border: 1px solid #dddddd;
+  margin-right: 1em;
+  margin-top: 43em;
+  padding: 1em;
+  }

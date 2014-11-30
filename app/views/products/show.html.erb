@@ -2,25 +2,28 @@
   <div class="col-md-9">
     <div class="col-sm-6 col-md-11">
       <div class="thumbnail video-in-show-product">
-        <iframe width="550" height="550" src="<%= @product.embed(@product.url) %>" frameborder="0" allowfullscreen></iframe>
+        <iframe width="650" height="400" src="<%= @product.embed(@product.url) %>" frameborder="0" allowfullscreen></iframe>
         <div class="caption">
           <p><%= @product.info %></p>
           <p><%= link_to "Edit", edit_product_path(@product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %></p>
         </div>
       </div>
     </div>
-  <div>
-    <h1>Comment</h1>
-    <%= simple_form_for @comment, url: comments_path do |f| %>
-      <%= f.input :post %>
-      <%= f.association :user, :as => :hidden %>
-      <%= f.submit "Comment", class: "btn btn-success" %>
-    <%end%>
 
-  </div>
-    <% @comments.each do |comment| %>
-      <%= comment.post %><br>
-    <%end%>
+    <div class="comment">
+
+      <%= simple_form_for @comment, url: comments_path do |f| %>
+        <%= f.input :post %>
+        <%= f.association :user, :as => :hidden %>
+        <%= f.submit "Comment", class: "btn btn-success" %>
+      <%end%>
+      <br>
+
+      <% @comments.each do |comment| %>
+
+        <span id="user-name"><strong><%= comment.user.email %></strong></span> <%= comment.post %> <span id="time"><%= time_ago_in_words(comment.created_at) %></span><br>
+      <%end%>
+    </div>
   </div>
 
   <%= render partial: "side" %>
