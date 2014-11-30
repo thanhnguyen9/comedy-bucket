@@ -20,8 +20,10 @@
       <br>
 
       <% @comments.each do |comment| %>
-
-        <span id="user-name"><strong><%= comment.user.email %></strong></span> <%= comment.post %> <span id="time"><%= time_ago_in_words(comment.created_at) %></span><br>
+        <%= link_to "#" do %>
+          <span id="user-name"><strong><%= comment.user.email %></strong>
+        <%end%>
+      </span> <%= comment.post %> <span id="time"><%= time_ago_in_words(comment.created_at) %> ago</span><br>
       <%end%>
     </div>
   </div>
