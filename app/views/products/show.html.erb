@@ -10,16 +10,14 @@
       </div>
     </div>
 
-    <div class="comment">
-      <%= form_for @comment, url: comments_path do |f| %>
-        <%= f.text_field :post %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-
+      <%= simple_form_for @comment, url: comments_path do |f| %>
+        <%= f.input :post %>
+        <%= f.association :user, :as => :hidden %>
         <%= f.submit "Comment", class: "btn btn-success" %>
       <%end%>
       <br>
 
-      <div id="comment">
+      <div class="comment">
         <%= render partial: "comment" %>
       </div>
     </div>
