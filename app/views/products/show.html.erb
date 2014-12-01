@@ -11,20 +11,17 @@
     </div>
 
     <div class="comment">
+      <%= form_for @comment, url: comments_path do |f| %>
+        <%= f.text_field :post %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
 
-      <%= simple_form_for @comment, url: comments_path do |f| %>
-        <%= f.input :post %>
-        <%= f.association :user, :as => :hidden %>
         <%= f.submit "Comment", class: "btn btn-success" %>
       <%end%>
       <br>
 
-      <% @comments.each do |comment| %>
-        <%= link_to "#" do %>
-          <span id="user-name"><strong><%= comment.user.email %></strong>
-        <%end%>
-      </span> <%= comment.post %> <span id="time"><%= time_ago_in_words(comment.created_at) %> ago</span><br>
-      <%end%>
+      <div id="comment">
+        <%= render partial: "comment" %>
+      </div>
     </div>
   </div>
 
