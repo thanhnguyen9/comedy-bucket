@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+  validates :url, presence: true
+  validates :info, presence: true
+
   belongs_to :user
 
   def embed(url)
