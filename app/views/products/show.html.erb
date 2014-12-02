@@ -4,8 +4,15 @@
       <div class="thumbnail video-in-show-product">
         <iframe width="650" height="400" src="<%= @product.embed(@product.url) %>" frameborder="0" allowfullscreen></iframe>
         <div class="caption">
-          <p><%= @product.info %></p>
-          <p><%= link_to "Edit", edit_product_path(@product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %></p>
+          <p class="p"><%= @product.info %></p>
+          <p>
+
+            <%= link_to "Edit", edit_product_path(@product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+
+            <%= link_to users_path(@product.user) do %>
+              <span id="user-name"><strong><%= @product.user.email %>:</strong>
+            <%end%>
+          </p>
         </div>
       </div>
     </div>

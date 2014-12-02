@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   get 'recommend' => "recommend#index"
 
+  get 'users/:id' => 'users#show', as: :users
+
   namespace :api do
     get '/artists' => 'artists#index'
 

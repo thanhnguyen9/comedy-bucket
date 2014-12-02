@@ -6,6 +6,7 @@
 @import "devise";
 @import "my_page";
 @import "recommend";
+@import "user";
 
 #logo {font-family: 'Dancing Script', cursive; font-size: 1.5em}
 #map {
@@ -55,3 +56,5 @@ a{color: black}
 #artist-name {display: none}
 
 iframe {margin-top: 1.5em; margin-left: 0.9em; margin-right: 1em; margin-bottom: 1.5em}
+
+.p {color: black}

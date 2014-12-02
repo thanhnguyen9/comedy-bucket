@@ -1,0 +1,23 @@
+<div class="row main-my-page">
+  <div class="col-md-9">
+    <p id="user-email">
+      <%= @user.email %>
+
+    </p>
+    <% @products.each do |product| %>
+
+      <div class="col-sm-6 col-md-6">
+        <div class="thumbnail">
+          <iframe width="320" height="349" src="<%= product.embed(product.url) %>" frameborder="0" allowfullscreen></iframe>
+          <div class="caption">
+            <p><%= link_to "Show", product_path(product), class: "btn btn-primary" %></p>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+  <br>
+  <span id="follow"><%= link_to "Follow", "#", class: "btn btn-success" %></span>
+  <%= render partial: "products/side" %>
+</div>
