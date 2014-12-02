@@ -9,13 +9,13 @@
    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
    <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
-
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
   <header>
     <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -34,20 +34,23 @@
                     <li>
                         <%= link_to "Home", root_path %>
                     </li>
-
-                    <li>
-                      <%= link_to "My Page", products_path %>
+                    <li><!-- Single button -->
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                         My page <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><%= link_to "My Page", products_path %></li>
+                          <li><%= link_to "Recommend", recommend_path %></li>
+                          <li><%= link_to "Subcription", "#" %></li>
+                          <li class="divider"></li>
+                        </ul>
+                      </div>
                     </li>
-
-                    <li>
-                      <%= link_to "Recommend", recommend_path %>
-                    </li>
-
-                    <% if user_signed_in? %>
+                      <% if user_signed_in? %>
                       <li>
                         <%= link_to "Upload", new_product_path %>
-                    </li>
-
+                      </li>
                       <li>
                         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
                       </li>
@@ -62,8 +65,15 @@
 
                     <li>
                       <%= form_tag root_path, method: :get do %>
-                        <%= text_field_tag :search, params[:search], class: "navbar-form navbar-left search-box", placeholder: "Search" %>
+                      <%= text_field_tag :search, params[:search], class: "navbar-form navbar-left search-box", placeholder: "Search" %>
+
                       <%end%>
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class='fa fa-search'></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Search for an artist">
+                      </div>
                     </li>
                 </ul>
             </div>
@@ -86,7 +96,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2014</span>
+                    <span class="copyright">Copyright &copy; comedy-box.herokuapp.com 2014</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
@@ -110,5 +120,8 @@
             </div>
         </div>
     </footer>
+
+    <div id='modal-spot' class="modal fade">
+    </div>
 </body>
 </html>

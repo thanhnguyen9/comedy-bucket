@@ -12,36 +12,34 @@
                     <div class="col-md-12">
                       <% @artists.each do |artist| %>
 
-                          <%= link_to "#", data: {toggle: "modal", target: "#modal#{artist.id}"} do %>
+                          <!-- <%= link_to "#", data: {toggle: "modal", target: "#modal#{artist.id}"} do %>
                             <%= image_tag artist.photo %>
-
+                          <%end%> -->
+                          <%= link_to "#", class: 'show-artist', data: {showartist: "#modal#{artist.id}"} do %>
+                          <%= image_tag artist.photo %>
                           <%end%>
-
-
-                  <!-- Modal -->
-                  <div class="modal fade" id="modal<%= artist.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                          <h4 class="modal-title" id="myModalLabel"><%= artist.name %></h4>
-                        </div>
-                        <div class="modal-body">
-                          <p><%= image_tag artist.photo, class: "photo-in-modal" %></p>
-                          <hr>
-                          <p class="p"><%= artist.info %></p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <%= link_to "Show Time", artist_path(artist), class: "btn btn-primary" %>
-
-                        </div>
-                      </div>
+                          <!-- Modal -->
+                          <div class="modal fade" id="modal<%= artist.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                  <h4 class="modal-title" id="myModalLabel"><%= artist.name %></h4>
+                                </div>
+                                <div class="modal-body">
+                                  <p><%= image_tag artist.photo, class: "photo-in-modal" %></p>
+                                  <hr id="modal-line">
+                                  <p class="p"><%= artist.info %></p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <%= link_to "Show Time", artist_path(artist), class: "btn btn-primary" %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <%end%>
                     </div>
-                  </div>
-
-                      <%end%>
-                  </div>
 
 
         </div>

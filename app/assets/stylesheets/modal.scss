@@ -9,3 +9,11 @@
 a:focus{
     outline:none!important
 }
+#modal-line {border-color: #E0CFD0}
+.dropdown-toggle {
+  position: relative;
+  z-index: 5000;
+}
+.modal-body {
+  overflow-y:visible;
+}

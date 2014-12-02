@@ -55,4 +55,4 @@ gem 'pg_search'
 
 gem 'devise'
 
-gem 'simple_form'
+gem 'simple_form', '3.1.0.rc2'
