@@ -1,4 +1,4 @@
-Images-Closet
+Comedy-Box
 =============
 - Track your favorite comedians and track events, dates and locations.
 - Comedy-Box makes it really easy storing videos.
