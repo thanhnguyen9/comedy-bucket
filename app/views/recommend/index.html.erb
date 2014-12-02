@@ -14,6 +14,7 @@
               <%= link_to product_path(product) do %>
                 <%= image_tag product.thumbnail(product.url), class: "recommend-image" %>
                 <div class="recommend-caption", style="margin-top: -1.5em; text-align: center ">
+                  <%= product.title %>
                 </div>
               <%end%>
           </div>

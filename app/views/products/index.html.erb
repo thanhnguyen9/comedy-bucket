@@ -7,6 +7,7 @@
             <div class="thumbnail">
               <iframe width="320" height="349" src="<%= product.embed(product.url) %>" frameborder="0" allowfullscreen></iframe>
               <div class="caption">
+                <p class="p"><%= product.title %></p>
                 <p><%= link_to "Show", product_path(product), class: "btn btn-primary" %> <%= link_to "Edit", edit_product_path(product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %></p>
               </div>
             </div>
