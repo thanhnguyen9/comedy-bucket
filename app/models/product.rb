@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   validates :info, presence: true
 
   belongs_to :user
+  has_many :comments
 
   def embed(url)
     youtube = url.split("=").last
