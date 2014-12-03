@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :comments
 
-  resources :relationships, only: [:index, :create, :destroy]
+  resources :relationships, only: [:index, :create, :show, :destroy]
 
   get 'comments/new'
 
