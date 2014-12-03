@@ -9,3 +9,4 @@ User Stories
 - **DONE** As a user, I want to comment on a video, so I can share my thought and opinion.
 - **DONE** As a user, I want to follow another user, so I can see their new upload.
 - As a user, I want to vote the video, so I can tell if I like the video or not.
+- As a user, I want to add comedians' shows to google calendar, so I know what my favorite show is coming.
