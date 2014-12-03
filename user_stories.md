@@ -7,5 +7,5 @@ User Stories
 - **DONE** As a user, I want to be able to upload youtube video, so I can have a collection.
 - **DONE** As a user, I want to look at all the videos of all the users, so I can see another user collection.
 - **DONE** As a user, I want to comment on a video, so I can share my thought and opinion.
-- As a user, I want to follow another user, so I can see their new upload.
+- **DONE** As a user, I want to follow another user, so I can see their new upload.
 - As a user, I want to vote the video, so I can tell if I like the video or not.
