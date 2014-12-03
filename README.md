@@ -1,13 +1,13 @@
-Comedy-Box
+Comedy-Bucket
 =============
 - Track your favorite comedians and track events, dates and locations.
 - Comedy-Box makes it really easy storing videos.
-- View demo site: [http://comedy-box.herokuapp.com/](http://comedy-box.herokuapp.com/)
-- Check out the [user_stories.md](https://github.com/thanhnguyentn/comedy-box/blob/master/user_stories.md) to see completed and upcoming features.
+- View demo site: [http://comedy-bucket.herokuapp.com/](http://comedy-bucket.herokuapp.com/)
+- Check out the [user_stories.md](https://github.com/thanhnguyentn/comedy-bucket/blob/master/user_stories.md) to see completed and upcoming features.
 
 Usage
 ======
-- Run `git clone git@github.com:thanhnguyentn/images-closet.git`
+- Run `git clone git@github.com:thanhnguyentn/comedy-bucket.git`
 - Run `bundle install`
 - Create database with `rake db:create`
 
