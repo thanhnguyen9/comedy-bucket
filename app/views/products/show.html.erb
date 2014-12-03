@@ -1,22 +1,20 @@
 <div class="row main-my-page show-product">
   <div class="col-md-9">
-    <div class="col-sm-6 col-md-11">
-      <div class="thumbnail video-in-show-product">
-        <iframe width="650" height="400" src="<%= @product.embed(@product.url) %>" frameborder="0" allowfullscreen></iframe>
-        <div class="caption">
-          <p class="p"><%= @product.info %></p>
-          <p>
-            <% if current_user.id == @product.user.id %>
-              <%= link_to "Edit", edit_product_path(@product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
-            <%else%>
-              <span class="p">By:</span>
-              <%= link_to user_path(@product.user) do %>
-                <span id="user-name"><strong><%= @product.user.email %></strong>
-              <%end%>
-            <%end%>
-          </p>
-        </div>
-      </div>
+    <div class="border-around">
+      <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="<%= @product.embed(@product.url) %>"></iframe>
+      </div><br>
+      <p class="p show-page"><%= @product.info %></p>
+      <p>
+        <% if current_user.id == @product.user.id %>
+          <%= link_to "Edit", edit_product_path(@product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+        <%else%>
+          <span class="p show-page">By:</span>
+          <%= link_to user_path(@product.user) do %>
+            <span id="user-name"><strong><%= @product.user.email %></strong>
+          <%end%>
+        <%end%>
+      </p>
     </div>
 
     <div class="comment">
