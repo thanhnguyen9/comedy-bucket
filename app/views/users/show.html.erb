@@ -25,10 +25,15 @@
   <br>
   <span id="follow">
     <%= simple_form_for @relationship, url: "/relationships" do |f| %>
-      <%= f.association :user, :as => :hidden%>
-      <%= f.association :friend, :as => :hidden %>
+    <%= f.association :user, :as => :hidden%>
+    <%= f.association :friend, :as => :hidden %>
 
-      <%= f.submit "Subcribe", class: "btn btn-danger" %>
+    <%= f.submit "Subcribe", class: "btn btn-danger" %>
     <%end%>
-  <%= render partial: "products/side" %>
+    <% Relationship.all.each do |relationship| %>
+      <% if relationship.user_id == current_user.id && relationship.friend_id == @user.id %>
+        <%= link_to "Unscribe", relationship_path(relationship), method: :delete, class: "btn btn-danger" %>
+      <%end%>
+    <%end%>
+  <%= render partial: "products/recommend" %>
 </div>

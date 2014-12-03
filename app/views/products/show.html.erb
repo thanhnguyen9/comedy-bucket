@@ -10,7 +10,7 @@
               <%= link_to "Edit", edit_product_path(@product), class:"btn btn-primary" %> <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
             <%else%>
               <span class="p">By:</span>
-              <%= link_to users_path(@product.user) do %>
+              <%= link_to user_path(@product.user) do %>
                 <span id="user-name"><strong><%= @product.user.email %></strong>
               <%end%>
             <%end%>
@@ -35,5 +35,5 @@
     </div>
   </div>
 
-  <%= render partial: "side" %>
+  <%= render partial: "products/side" %>
 </div>

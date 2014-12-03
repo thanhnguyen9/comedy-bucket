@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
+  resources :products
+
+  resources :comments
+
+  resources :relationships, only: [:index, :create, :destroy]
+
   get 'comments/new'
 
   get 'comments/edit'
 
   get 'recommend/index'
-
-  devise_for :users
 
   root 'artists#index'
 
@@ -24,14 +30,9 @@ Rails.application.routes.draw do
 
   post 'videos' => 'videos#create'
 
-  resources :products
-  resources :comments
-
   get 'recommend' => "recommend#index"
 
-  get 'users/:id' => 'users#show', as: :users
-
-  post 'relationships' => 'relationships#create', as: :relationships
+  get 'users/:id' => 'users#show', as: :user
 
   namespace :api do
     get '/artists' => 'artists#index'
