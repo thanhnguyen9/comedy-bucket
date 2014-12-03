@@ -1,5 +1,5 @@
 <div class="row main-my-page show-product">
-  <div class="col-md-9">
+  <div class="col-md-8">
     <div class="row log-in">
 
       <h2>Sign up</h2>
@@ -8,13 +8,13 @@
         <%= devise_error_messages! %>
 
         <div><%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %></div>
+        <%= f.email_field :email, autofocus: true, class: "form-control" %></div>
 
         <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %></div>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %></div>
 
         <div><%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %></div><br>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %></div><br>
 
         <div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
       <% end %>
@@ -22,5 +22,5 @@
       <%= render "devise/shared/links" %>
     </div>
   </div>
-  <%= render partial: "products/side" %>
+  
 </div>
