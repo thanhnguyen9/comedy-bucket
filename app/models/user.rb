@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :products
   has_many :comments
+  has_many :relationships
+  has_many :friends, through: :relationships, class_name: "User"
 end

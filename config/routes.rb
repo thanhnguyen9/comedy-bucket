@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   get 'users/:id' => 'users#show', as: :users
 
+  post 'relationships' => 'relationships#create', as: :relationships
+
   namespace :api do
     get '/artists' => 'artists#index'
 
@@ -54,5 +56,6 @@ Rails.application.routes.draw do
     post '/schedules' => 'schedules#create'
     put '/schedules/:id' => 'schedules#update'
     get 'schedules/:id' => 'schedules#show'
+
   end
 end

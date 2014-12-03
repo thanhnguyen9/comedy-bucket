@@ -23,6 +23,12 @@
     <%end%>
   </div>
   <br>
-  <span id="follow"><%= link_to "Subcribe", "#", class: "btn btn-danger" %></span>
+  <span id="follow">
+    <%= simple_form_for @relationship, url: "/relationships" do |f| %>
+      <%= f.association :user, :as => :hidden%>
+      <%= f.association :friend, :as => :hidden %>
+
+      <%= f.submit "Subcribe", class: "btn btn-danger" %>
+    <%end%>
   <%= render partial: "products/side" %>
 </div>
