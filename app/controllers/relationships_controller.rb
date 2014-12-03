@@ -1,20 +1,15 @@
 class RelationshipsController < ApplicationController
 
   def create
-    @relationship = Relationship.new(params_relationship)
+    @relationship = Relationship.new(user_id: current_user.id, friend_id: params[:friend_id])
     @relationship.save
-    redirect_to recommend_index_path, notice: "Successfully Subcribed"
+    redirect_to recommend_index_path, notice: "Successfully Subscribed"
   end
 
   def destroy
-    @relationship = Relationship.find(params[:id])
+    @relationship = Relationship.where(:user_id => params[:user_id], :friend_id => params[:friend_id]).first
     @relationship.delete
-    redirect_to recommend_index_path, notice: "Successfully Unsubcribe"
+    redirect_to recommend_index_path, notice: "Successfully Unsubscribe"
   end
 
-  private
-
-  def params_relationship
-    params.require(:relationship).permit(:user_id, :friend_id)
-  end
 end
