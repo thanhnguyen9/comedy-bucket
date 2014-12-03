@@ -13,7 +13,7 @@ artists = [
   },
   {
     name: "Chris Tucker",
-    photo: "http://www.miami.com/sites/migration.miami.com/files/images/ChrisTucker.jpg",
+    photo: "http://ia.media-imdb.com/images/M/MV5BMTc4NjAxMjQwMF5BMl5BanBnXkFtZTYwMzcxOTg0._V1_SY317_CR8,0,214,317_AL_.jpg",
     info: "At one point in time, was the highest paid actor in Hollywood. Christopher Tucker was born in Atlanta, Georgia to Mary Louise Tucker (Bryant) and Norris Tucker.
     After graduating from high school, Tucker made the change to move to Hollywood from Georgia to pursue a career in show business.
     Chris Tucker found himself being a frequent guest on the Def Comedy Jam. Tucker was noted for doing exceptionally 'clean', non-vulgar stand-up comedy routines. Tucker states his inspirations for comedy are, Eddie Murphy and Richard Pryor."

@@ -3,13 +3,13 @@
   <div class="col-md-9">
     <% @products.each do |product| %>
       <% if product.user_id != current_user.id %>
-      <% @a << product %>
+        <% @a << product %>
       <%end%>
     <%end%>
 
     <div class="recommend-thumbnail">
       <% @a.each do |product| %>
-        <div class="col-sm-3 col-md-3 recommend-thumbnail">
+        <div class="col-sm-4 col-md-4 recommend-thumbnail">
           <div class="thumbnail">
               <%= link_to product_path(product) do %>
                 <%= image_tag product.thumbnail(product.url), class: "recommend-image" %>

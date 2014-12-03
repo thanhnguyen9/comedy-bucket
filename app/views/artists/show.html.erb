@@ -1,5 +1,4 @@
 
-
     <div class="row main-my-page">
 
       <br>
@@ -24,6 +23,8 @@
           <th>City</th>
         </tr>
         <% @schedules.each do |schedule| %>
+        <%= link_to "Edit", edit_artist_path(schedule.artist), style: "display: none" %>
+
         <tr>
             <td><%= schedule.time.strftime("%A, %d %b %Y %l:%M %p") %></td>
             <td><%= schedule.place_name %></td>

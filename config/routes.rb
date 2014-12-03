@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'connects/index'
+
   devise_for :users
 
   resources :products
@@ -8,23 +10,9 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:index, :create, :show, :destroy]
 
-  get 'comments/new'
-
-  get 'comments/edit'
-
-  get 'recommend/index'
-
   root 'artists#index'
 
-  get 'artists' => 'artists#index'
-
-  get 'artists/:id' => 'artists#show'
-
-  get 'artists/new' => 'artists#new'
-
-  post 'artists' => 'artists#create'
-
-  get 'aritsts/:id' => 'artists#show' ,as: :artist
+  resources :artists
 
   get 'videos/new' => 'videos#new'
 
@@ -32,7 +20,11 @@ Rails.application.routes.draw do
 
   get 'recommend' => "recommend#index"
 
+  get 'connects' => 'connects#index'
+
   get 'users/:id' => 'users#show', as: :user
+
+
 
   namespace :api do
     get '/artists' => 'artists#index'
