@@ -1,7 +1,6 @@
-
 <div class="row main-my-page">
   <div class="col-md-10">
-    <div class="border-wrap">
+
       <% @products.each do |product| %>
         <% if product.user_id != current_user.id %>
           <% @a << product %>
@@ -21,7 +20,7 @@
             </div>
           </div>
         <% end %>
-      </div>
+      
     </div>
   </div>
 
