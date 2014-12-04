@@ -1,30 +1,29 @@
-
 <div class="row main-my-page">
-  <div class="col-md-9">
+  <div class="col-md-10">
+    <div class="border-wrap">
+      <% @relationships.each do |relationship| %>
 
-    <% @relationships.each do |relationship| %>
-      <% @products.each do |product| %>
+        <% @products.each do |product| %>
 
-        <div class="recommend-thumbnail">
-          <% if relationship.friend_id == product.user_id %>
-          <div class="col-sm-4 col-md-4 recommend-thumbnail">
-            <div class="thumbnail">
-              <%= link_to product_path(product) do %>
-              <%= image_tag product.thumbnail(product.url), class: "recommend-image" %>
-              <div class="recommend-caption", style="margin-top: -1.5em; text-align: center ">
-                <%= product.title %>
+          <div class="recommend-thumbnail">
+            <% if relationship.friend_id == product.user_id %>
+            <div class="col-sm-4 col-md-4 recommend-thumbnail">
+              <div class="thumbnail">
+                <%= link_to product_path(product) do %>
+                <%= image_tag product.thumbnail(product.url), class: "recommend-image" %>
+                <div class="recommend-caption", style="margin-top: -1.5em; text-align: center ">
+                  <%= product.title %>
+                </div>
+                <%end%>
               </div>
-              <%end%>
             </div>
+            <% end %>
+
           </div>
-          <% end %>
-
-        </div>
-
-
+        <%end%>
       <%end%>
-    <%end%>
-      </div>
+    </div>
+  </div>
 
   <%= render partial: "products/side" %>
 

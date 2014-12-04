@@ -13,7 +13,7 @@ class RelationshipsController < ApplicationController
   def destroy
     @relationship = Relationship.where(:user_id => params[:user_id], :friend_id => params[:friend_id]).first
     @relationship.delete
-    redirect_to recommend_index_path, notice: "Successfully Unconnected"
+    redirect_to recommend_path, notice: "Successfully Unconnected"
   end
 
 end

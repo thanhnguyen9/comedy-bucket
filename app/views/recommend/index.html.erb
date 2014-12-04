@@ -1,25 +1,27 @@
 
 <div class="row main-my-page">
-  <div class="col-md-9">
-    <% @products.each do |product| %>
-      <% if product.user_id != current_user.id %>
-        <% @a << product %>
+  <div class="col-md-10">
+    <div class="border-wrap">
+      <% @products.each do |product| %>
+        <% if product.user_id != current_user.id %>
+          <% @a << product %>
+        <%end%>
       <%end%>
-    <%end%>
 
-    <div class="recommend-thumbnail">
-      <% @a.each do |product| %>
-        <div class="col-sm-4 col-md-4 recommend-thumbnail">
-          <div class="thumbnail">
-              <%= link_to product_path(product) do %>
-                <%= image_tag product.thumbnail(product.url), class: "recommend-image" %>
-                <div class="recommend-caption", style="margin-top: -1.5em; text-align: center ">
-                  <%= product.title %>
-                </div>
-              <%end%>
+      <div class="recommend-thumbnail">
+        <% @a.each do |product| %>
+          <div class="col-sm-4 col-md-4 recommend-thumbnail">
+            <div class="thumbnail">
+                <%= link_to product_path(product) do %>
+                  <%= image_tag product.thumbnail(product.url), class: "recommend-image" %>
+                  <div class="recommend-caption", style="margin-top: -1.5em; text-align: center ">
+                    <%= product.title %>
+                  </div>
+                <%end%>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 

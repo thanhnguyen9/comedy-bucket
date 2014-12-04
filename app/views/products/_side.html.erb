@@ -1,12 +1,12 @@
 
-<div class="col-md-3 thumbnail-on-side">
+<div class="col-md-2 thumbnail-on-side">
 
   <% Video.all.each do |video| %>
     <%= link_to artist_path(video.artist.id) do %>
-      <%= image_tag video.thumbnail(video.url), class: "thumbnail-image" %>
-      <span class="artist-name-on-side">
+      <%= image_tag video.thumbnail(video.url), class: "img-responsive" %>
+      <p class="artist-name-on-side">
         <%= video.artist.name %>
-      </span>
+      </p>
     <%end%>
   <%end%>
 </div>

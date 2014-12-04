@@ -1,6 +1,5 @@
 .thumbnail{
   margin-top: 1em;
-  padding-left: 1.5em
   }
 
 .thumbnail-image{
@@ -22,7 +21,12 @@
   margin-left: -1em;
   }
 
-.artist-name-on-side{font-size: 0.8em}
+.artist-name-on-side{
+  color: black;
+  margin-left: 1em;
+  margin-top: -2em;
+  text-align: center
+  }
 
 .show-product {}
 
@@ -47,3 +51,10 @@
   }
 .col-md-4.upload-content {height: 100vh}
 .btn-danger{margin-top: -2em}
+.border-wrap{
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  min-height: 330px
+  }
