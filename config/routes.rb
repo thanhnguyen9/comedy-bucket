@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :products
 
+  post 'products/:id/like' => 'products#like', as: :like
+
   resources :comments
 
   resources :relationships, only: [:index, :create, :show, :destroy]

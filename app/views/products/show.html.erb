@@ -13,6 +13,10 @@
           <%= link_to user_path(@product.user) do %>
             <span id="user-name"><strong><%= @product.user.email %></strong>
           <%end%>
+          <%= link_to like_path(@product), method: :post, class: "btn btn-primary thumbs-up" do %>
+            <i class="fa fa-thumbs-up fa-4"></i>
+          <%end%>
+          <p class="p"><%= @product.likes %></p>
         <%end%>
       </p>
     </div>
@@ -33,5 +37,11 @@
     </div>
   </div>
 
-  <%= render partial: "products/side" %>
+  <div id="posts">
+    <div class="page">
+      <%= render partial: "products/side" %>
+    </div>
+  </div>
 </div>
+
+<%= paginate @videos %>

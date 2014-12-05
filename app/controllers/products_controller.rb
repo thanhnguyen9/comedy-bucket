@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action do
+    @videos = Video.all.page params[:page]
+  end
 
   def index
     @products = Product.where(:user_id => current_user.id)
@@ -45,9 +48,16 @@ class ProductsController < ApplicationController
       redirect_to products_path
   end
 
+  def like
+    @product = Product.find(params[:id])
+    @product.likes += 1
+    @product.save
+    redirect_to product_path(@product)
+  end
+
   private
 
   def params_product
-    params.require(:product).permit(:title, :url, :info, :user_id)
+    params.require(:product).permit(:title, :url, :info, :user_id, :likes)
   end
 end

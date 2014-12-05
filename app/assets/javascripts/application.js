@@ -31,3 +31,4 @@ $(document).ready(function(){
 
 
 });
+//= require jquery.infinitescroll

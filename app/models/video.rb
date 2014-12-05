@@ -1,5 +1,6 @@
 class Video < ActiveRecord::Base
   belongs_to :artist
+  paginates_per 10
 
   def thumbnail(url)
     youtube = url.split("/").last
