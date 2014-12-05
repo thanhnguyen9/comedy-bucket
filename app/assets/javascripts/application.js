@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery.infinitescroll
 //= require_tree .
 
 
@@ -31,4 +32,3 @@ $(document).ready(function(){
 
 
 });
-//= require jquery.infinitescroll

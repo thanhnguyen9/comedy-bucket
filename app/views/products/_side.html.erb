@@ -1,13 +1,17 @@
-
 <div class="col-md-2 thumbnail-on-side">
-  <div class="post">
-  <% @videos.each do |video| %>
-    <%= link_to artist_path(video.artist.id) do %>
-      <%= image_tag video.thumbnail(video.url), class: "img-responsive" %>
-      <p class="artist-name-on-side">
-        <%= video.artist.name %>
-      </p>
-    <%end%>
-  <%end%>
+  <div id="posts">
+    <div class="page">
+      <div class="post">
+        <% @videos.each do |video| %>
+          <%= link_to artist_path(video.artist.id) do %>
+            <%= image_tag video.thumbnail(video.url), class: "img-responsive" %>
+            <p class="artist-name-on-side">
+              <%= video.artist.name %>
+            </p>
+          <%end%>
+        <%end%>
+      </div>
+      <%= paginate @videos %>
+    </div>
   </div>
 </div>
