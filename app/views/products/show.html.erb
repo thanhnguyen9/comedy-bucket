@@ -16,7 +16,8 @@
           <%= link_to like_path(@product), method: :post, class: "btn btn-primary thumbs-up" do %>
             <i class="fa fa-thumbs-up fa-4"></i>
           <%end%>
-          <p class="p"><%= @product.likes %></p>
+          <span class="p"><%= @product.likes %></span>
+
         <%end%>
       </p>
     </div>
