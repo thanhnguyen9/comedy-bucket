@@ -1,5 +1,5 @@
 <div class="row main-my-page">
-  <div class="col-md-9">
+  <div class="col-md-10">
     <% if @products.any? %>
       <p id="user-email">
         <%= @user.email %>
@@ -33,5 +33,10 @@
       <%= button_to "Unsubcribe", relationship_path(user_id: current_user.id, friend_id: @user.id), method: :delete, class: "btn btn-danger" %>
     <%end%>
   </span>
-  <%= render partial: "products/recommend" %>
+
+  <div class="col-md-2">
+    <div class="thumbnail-on-recommend-side subscribe">
+      <%= render partial: "products/side" %>
+    </div>
+  </div>
 </div>

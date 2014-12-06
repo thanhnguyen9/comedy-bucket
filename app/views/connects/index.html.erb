@@ -1,8 +1,7 @@
 <div class="row main-my-page">
   <div class="col-md-10">
-    <div class="border-wrap">
-      <% @relationships.each do |relationship| %>
 
+      <% @relationships.each do |relationship| %>
         <% @products.each do |product| %>
 
           <div class="recommend-thumbnail">
@@ -22,9 +21,12 @@
           </div>
         <%end%>
       <%end%>
-    </div>
   </div>
 
-  <%= render partial: "products/side" %>
+  <div class="col-md-2">
+    <div class="thumbnail-on-recommend-side">
+      <%= render partial: "products/side" %>
+    </div>
+  </div>
 
 </div>

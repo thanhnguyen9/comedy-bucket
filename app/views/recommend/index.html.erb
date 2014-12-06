@@ -9,21 +9,24 @@
 
       <div class="recommend-thumbnail">
         <% @a.each do |product| %>
-          <div class="col-sm-4 col-md-4 recommend-thumbnail">
-            <div class="thumbnail">
-                <%= link_to product_path(product) do %>
-                  <%= image_tag product.thumbnail(product.url), class: "recommend-image" %>
-                  <div class="recommend-caption", style="margin-top: -1.5em; text-align: center ">
-                    <%= product.title %>
-                  </div>
-                <%end%>
+            <div class="col-sm-4 col-md-4 recommend-thumbnail">
+              <div class="thumbnail">
+                  <%= link_to product_path(product) do %>
+                    <%= image_tag product.thumbnail(product.url), class: "recommend-image" %>
+                    <div class="recommend-caption", style="margin-top: -1.5em; text-align: center ">
+                      <%= product.title %>
+                    </div>
+                  <%end%>
+              </div>
             </div>
-          </div>
         <% end %>
-      
-    </div>
+      </div>
   </div>
 
-  <%= render partial: "products/side" %>
+  <div class="col-md-2">
+    <div class="thumbnail-on-recommend-side">
+      <%= render partial: "products/side" %>
+    </div>
+  </div>
 
 </div>

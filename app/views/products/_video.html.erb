@@ -1,0 +1,10 @@
+
+  <% @videos.each do |video| %>
+    <%= link_to artist_path(video.artist.id) do %>
+      <%= image_tag video.thumbnail(video.url), class: "img-responsive" %>
+      <p class="artist-name-on-side">
+        <%= video.artist.name %>
+      </p>
+    <%end%>
+  <%end%>
+  

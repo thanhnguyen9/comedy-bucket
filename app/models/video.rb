@@ -6,4 +6,5 @@ class Video < ActiveRecord::Base
     youtube = url.split("/").last
     a = "http://img.youtube.com/vi/#{youtube}/default.jpg"
   end
+
 end
