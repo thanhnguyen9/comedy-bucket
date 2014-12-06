@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
 
-  validates :title, length: { minimum: 5, maximum: 60}
+  validates :title, length: { minimum: 5, maximum: 38}
   validates :url, presence: true
   validates :info, presence: true
 
