@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(params_comment)
     if @comment.save
-      redirect_to products_path
+      redirect_to product_path(id: @comment.product_id)
     else
       render :new
     end
