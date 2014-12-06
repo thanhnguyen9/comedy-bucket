@@ -48,13 +48,6 @@ class ProductsController < ApplicationController
       redirect_to products_path
   end
 
-  def like
-    @product = Product.find(params[:id])
-    @product.likes += 1
-    @product.save
-    redirect_to product_path(@product)
-  end
-
   private
 
   def params_product

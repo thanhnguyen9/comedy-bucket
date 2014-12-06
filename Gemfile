@@ -60,3 +60,5 @@ gem 'simple_form', '3.1.0.rc2'
 gem 'pry'
 
 gem 'kaminari'
+
+gem 'quiet_assets', group: :development

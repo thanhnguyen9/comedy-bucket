@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :relationships
   has_many :friends, through: :relationships, class_name: "User"
+  has_many :votes
 end

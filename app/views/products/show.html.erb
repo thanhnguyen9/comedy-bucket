@@ -13,11 +13,17 @@
           <%= link_to user_path(@product.user) do %>
             <span id="user-name"><strong><%= @product.user.email %></strong>
           <%end%>
-          <%= link_to like_path(@product), method: :post, class: "btn btn-primary thumbs-up" do %>
-            <i class="fa fa-thumbs-up fa-4"></i>
+          <!-- <%= button_to votes_path(user_id: current_user.id, product_id: @product), class: "btn btn-primary like-button" do %>
+          <i class="fa fa-thumbs-up fa-4"></i>
+          <%end%> -->
+          <%= link_to votes_path(product_id: @product), method: :post, class: "btn btn-primary" do %>
+            <i class="fa fa-thumbs-up"></i>
           <%end%>
-          <span class="p"><%= @product.likes %></span>
+          <span class="p like-count"><%= @product.likes %></span>
 
+          <%= link_to vote_path(user_id: current_user.id, product_id: @product.id), method: :delete, class: "btn btn-primary" do %>
+            <i class="fa fa-thumbs-down"></i>
+          <%end%>
         <%end%>
       </p>
     </div>

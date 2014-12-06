@@ -1,20 +1,22 @@
 Rails.application.routes.draw do
 
-  get 'connects/index'
-
-  devise_for :users
+  root 'artists#index'
 
   resources :products
 
-  post 'products/:id/like' => 'products#like', as: :like
+  resources :artists
+
+  devise_for :users
+
+  resources :artists
 
   resources :comments
 
+  resources :votes, only: [:create, :destroy]
+
+  post 'products/:id/like' => 'products#like', as: :like
+
   resources :relationships, only: [:index, :create, :show, :destroy]
-
-  root 'artists#index'
-
-  resources :artists
 
   get 'videos/new' => 'videos#new'
 
