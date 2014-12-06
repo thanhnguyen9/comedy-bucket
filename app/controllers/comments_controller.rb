@@ -1,16 +1,14 @@
 class CommentsController < ApplicationController
 
   def new
-    @comment = Comment.new\
+    @comment = Comment.new
   end
 
   def create
     @comment = Comment.create(params_comment)
-    if @comment.save
-      redirect_to product_path(id: @comment.product_id)
-    else
-      render :new
-    end
+    @comment.save
+    @comments = Comment.order("created_at DESC")
+    @product = Product.find_by(id: @comment.product_id)
   end
 
   def edit

@@ -1,0 +1,8 @@
+<%= simple_form_for @comment, url: comments_path, remote: true do |f| %>
+
+  <%= f.input :post %>
+  <%= f.association :user, :as => :hidden %>
+  <%= f.association :product, :as => :hidden%>
+
+  <%= f.submit "Comment", class: "btn btn-success" %>
+<%end%>
