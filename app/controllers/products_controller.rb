@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @comment = current_user.comments.new(product_id: @product.id)
     @comments = Comment.order("created_at DESC")
+    @vote = Vote.find_by(user_id: current_user.id, product_id: @product.id)
   end
 
   def new
