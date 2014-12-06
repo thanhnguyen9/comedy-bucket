@@ -12,11 +12,8 @@
                     <div class="col-md-12">
                       <% @artists.each do |artist| %>
 
-                          <!-- <%= link_to "#", data: {toggle: "modal", target: "#modal#{artist.id}"} do %>
-                            <%= image_tag artist.photo %>
-                          <%end%> -->
                           <%= link_to "#", class: 'show-artist', data: {showartist: "#modal#{artist.id}"} do %>
-                          <%= image_tag artist.photo %>
+                            <%= image_tag artist.photo %>
                           <%end%>
                           <!-- Modal -->
                           <div class="modal fade" id="modal<%= artist.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
