@@ -3,12 +3,12 @@
 
       <% @products.each do |product| %>
         <% if product.user_id != current_user.id %>
-          <% @a << product %>
+          <% @list << product %>
         <%end%>
       <%end%>
 
       <div class="recommend-thumbnail">
-        <% @a.each do |product| %>
+        <% @list.each do |product| %>
             <div class="col-sm-4 col-md-4 recommend-thumbnail">
               <div class="thumbnail">
                   <%= link_to product_path(product) do %>

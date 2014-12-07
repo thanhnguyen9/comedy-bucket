@@ -7,7 +7,6 @@ class VotesController < ApplicationController
     @product = Product.find_by(id: @vote.product_id)
     @product.likes += 1
     @product.save
-    redirect_to product_path(@vote.product_id)
   end
 
   def destroy
@@ -18,4 +17,5 @@ class VotesController < ApplicationController
     @vote.delete
     redirect_to product_path(@product)
   end
+
 end

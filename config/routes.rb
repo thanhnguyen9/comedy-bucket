@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :comments
 
-  resources :votes, only: [:create, :destroy]
+  post 'votes/create' => 'votes#create', as: :votes
+
+  delete 'votes' => 'votes#destroy', as: :vote
 
   post 'products/:id/like' => 'products#like', as: :like
 
