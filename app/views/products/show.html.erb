@@ -17,8 +17,11 @@
           <%end%>
 
           <div class="vote">
-            <%= render partial: "voteup" %>
-            <%= render partial: "votedown" %>
+            <% if @vote.present? %>
+              <%= render partial: "votedown" %>
+            <%else%>
+              <%= render partial: "voteup" %>
+            <%end%>
             <%= render partial: "votenum" %>
           </div>
          <%end%>
