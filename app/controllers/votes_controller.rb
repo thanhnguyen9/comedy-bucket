@@ -15,7 +15,6 @@ class VotesController < ApplicationController
     @product.likes -= 1
     @product.save
     @vote.delete
-    redirect_to product_path(@product)
   end
 
 end
