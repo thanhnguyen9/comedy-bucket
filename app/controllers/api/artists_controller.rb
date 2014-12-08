@@ -7,21 +7,8 @@ class Api::ArtistsController < ApplicationController
     render json: @artists
   end
 
-  def create
-    @artist = Artist.new(params.require(:artists).permit(:name))
-    @artist.save
+  def show
+    @artist = Artist.find(params[:id])
     render json: @artist
-  end
-
-  def update
-    @artist = Artist.find(params[:id])
-    @artis = Artist.update(params.require(:artists).permit(:name))
-    render @artist
-  end
-
-  def destroy
-    @artist = Artist.find(params[:id])
-    @artist.delete
-    render json: {ok: true}
   end
 end
