@@ -1,12 +1,8 @@
 <div class="row main-my-page">
-
   <br>
   <hr>
-  <h2 class="intro-text text-center">Welcome to
-      <span id="logo">Comedy-Bucket</span>
-  </h2>
+  <h2 class="intro-text text-center"><span id="logo">Comedy-Bucket</span></h2>
   <hr>
-
   <br>
   <div class="col-md-12">
     <% @artists.each do |artist| %>
@@ -14,7 +10,7 @@
             <%= image_tag artist.photo %>
           <%end%>
           <!-- Modal -->
-          <div class="modal fade" id="modal<%= artist.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal" id="modal<%= artist.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">

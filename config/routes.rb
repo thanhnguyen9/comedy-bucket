@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'comedians/create'
+
   root 'artists#index'
 
   resources :products
@@ -22,11 +24,15 @@ Rails.application.routes.draw do
 
   get 'users/:id' => 'users#show', as: :user
 
+  get 'add' => 'artists#add', as: :add
+
   post 'products/:id/like' => 'products#like', as: :like
 
   post 'votes/create' => 'votes#create', as: :votes
 
   post 'videos' => 'videos#create'
+
+  post 'comedians' => 'comedians#create', as: :comedians
 
   delete 'votes' => 'votes#destroy', as: :vote
 
