@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   namespace :api do
     get '/artists' => 'artists#index'
     post '/artists' => 'artists#create'
+    get '/artists/:id' => 'artists#show'
     put '/artists/:id' => 'artists#update'
     delete '/artists/:id' => 'artists#destroy'
 
@@ -44,8 +45,7 @@ Rails.application.routes.draw do
     get '/schedules' => 'schedules#index'
     post '/schedules' => 'schedules#create'
     put '/schedules/:id' => 'schedules#update'
-    get 'schedules/:id' => 'schedules#show'
-
+    get 'schedules/:name' => 'schedules#search'
   end
-  
+
 end

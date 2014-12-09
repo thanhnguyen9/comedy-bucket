@@ -9,6 +9,7 @@ class Api::ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @videos = @artist.videos
     render json: @artist
   end
 end

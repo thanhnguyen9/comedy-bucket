@@ -1,2 +1,5 @@
+<% if @comment.errors.none? %>
+  <% @comment = current_user.comments.new(product_id: @product.id) %>
+<% end %>
 $('#comment').html('<%= j render partial: "products/comment" %>');
 $("#comment-ajax").html('<%= j render partial: "products/commentform" %>');

@@ -7,8 +7,10 @@ class Api::SchedulesController < ApplicationController
     render json: @schedules
   end
 
-  def show
-    @schedule = Schedule.find(params[:id])
+  def search
+    @artist = Artist.find_by(name: params[:name])
+    @schedule = @artist.schedules
+    @schedule = artist.schedules.find_by(name: params[:name])
     render json: @schedule
   end
 end

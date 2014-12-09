@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(params_comment)
     @comment.save
+    @product = @comment.product
     @comments = Comment.order("created_at DESC")
-    @product = Product.find_by(id: @comment.product_id)
   end
 
   def edit

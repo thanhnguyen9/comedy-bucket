@@ -1,7 +1,7 @@
 Comedy-Bucket
 =============
 - Track your favorite comedians and track events, dates and locations.
-- Comedy-Box makes it really easy storing videos.
+-  Comedy-Bucket is a youtube video-sharing website. Make it really easy to create a collection of youtube comedy videos. Includes network and professional content.
 - View demo site: [http://comedy-bucket.herokuapp.com/](http://comedy-bucket.herokuapp.com/)
 - Check out the [user_stories.md](https://github.com/thanhnguyentn/comedy-bucket/blob/master/user_stories.md) to see completed and upcoming features.
 
