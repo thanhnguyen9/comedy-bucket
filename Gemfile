@@ -62,3 +62,5 @@ gem 'pry'
 gem 'kaminari'
 
 gem 'quiet_assets', group: :development
+
+gem 'dotenv-rails'
