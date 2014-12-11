@@ -1,11 +1,12 @@
-<div class="col-md-10 login-form">
-    <%= simple_form_for @product do |f| %>
-      <%= f.input :title %>
-      <%= f.input :url %>
-      <%= f.input :info  %>
-      <%= f.association :user, :as => :hidden %>
+<%= simple_form_for @product ||= current_user.products.new do |f| %>
+  <%= f.input :title %>
+  <%= f.input :url %>
+  <%= f.input :info  %>
+  <%= f.association :user, :as => :hidden %>
 
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-    <br>
-</div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<br>
