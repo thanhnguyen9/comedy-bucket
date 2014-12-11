@@ -1,0 +1,14 @@
+<table class="table table-bordered">
+  <tr>
+    <th>
+      Name
+    </th>
+  </tr>
+  <% Comedian.all.each do |comedian| %>
+  <tr>
+    <td>
+      <%= comedian.name %>
+    </td>
+  </tr>
+  <%end%>
+</table>

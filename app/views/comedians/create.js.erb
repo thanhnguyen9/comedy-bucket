@@ -1,0 +1,6 @@
+<% if @comedian.errors.none? %>
+  <% @comedian = Comedian.new %>
+<% end %>
+
+$(".addtable").html("<%= j render partial: "artists/addtable" %>")
+$(".addform").html("<%= j render partial: "artists/addform"%>")
