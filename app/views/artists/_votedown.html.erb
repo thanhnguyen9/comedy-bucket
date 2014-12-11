@@ -1,0 +1,3 @@
+<%= link_to vote_artist_path(user_id: current_user.id, artist_id: @artist.id), method: :delete, remote: true, class: "btn btn-success thumbs-up" do %>
+  <i class="fa fa-thumbs-down"></i>
+<%end%>

@@ -47,6 +47,14 @@
         <div id="comment-artist">
           <%= render partial: "commentform" %>
         </div>
+        <div class="vote-artist">
+          <% if @vote.present? %>
+            <%= render partial: "votedown" %>
+          <%else%>
+            <%= render partial: "voteup" %>
+          <%end%>
+            <%= render partial: "votenum" %>
+        </div>
         <br>
 
         <div id="artist-comment">

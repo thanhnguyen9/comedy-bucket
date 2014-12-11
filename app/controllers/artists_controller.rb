@@ -17,6 +17,7 @@ class ArtistsController < ApplicationController
     @videos = Video.where(:artist_id => @artist.id)
     @comment = current_user.commentartists.new(artist_id: @artist.id)
     @comments = Commentartist.all
+    @vote = Voteartist.find_by(user_id: current_user.id, artist_id: @artist.id)
   end
 
   def new
@@ -50,6 +51,6 @@ class ArtistsController < ApplicationController
   private
 
   def params_artist
-    params.require(:artist).permit(:name, :photo, :info)
+    params.require(:artist).permit(:name, :photo, :info, :likes)
   end
 end

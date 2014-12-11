@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'commentartists/create'
-
-  get 'comedians/create'
-
   root 'artists#index'
 
   resources :products
@@ -38,7 +34,11 @@ Rails.application.routes.draw do
 
   post 'comedians' => 'comedians#create', as: :comedians
 
+  post 'voteartists/create' => 'voteartists#create', as: :vote_artists
+
   delete 'votes' => 'votes#destroy', as: :vote
+
+  delete 'voteartists' => "voteartists#destroy", as: :vote_artist
 
   namespace :api do
     get '/artists' => 'artists#index'
