@@ -40,6 +40,24 @@
 </div>
 <br>
 
+<div class="row main-my-page">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="comment comment-artist">
+        <div id="comment-artist">
+          <%= render partial: "commentform" %>
+        </div>
+        <br>
+
+        <div id="artist-comment">
+          <%= render partial: "comment" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
 <script>
 $(window).ready(function(){
   <% @schedules.each do |point| %>

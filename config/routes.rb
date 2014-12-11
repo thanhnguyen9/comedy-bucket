@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'commentartists/create'
+
   get 'comedians/create'
 
   root 'artists#index'
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
   resources :artists
 
   resources :comments
+
+  resources :commentartists, only: [:create]
 
   resources :relationships, only: [:index, :create, :show, :destroy]
 
