@@ -1,3 +1,5 @@
-
-$('#artist-comment').html('<%= j render partial: "artists/comment" %>');
-$("#comment-artist").html('<%= j render partial: "artists/commentform" %>');
+<% if @comment.errors.none? %>
+  <% @comment = current_user.commentartists.new(artist_id: @artist.id) %>
+<% end %>
+$("#artist-comment").html("<%= j render partial: "artists/comment" %>");
+$("#comment-artist").html("<%= j render partial: "artists/commentform" %>");

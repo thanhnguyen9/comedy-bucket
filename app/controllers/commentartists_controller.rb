@@ -2,8 +2,8 @@ class CommentartistsController < ApplicationController
 
   def create
     @comment = Commentartist.new(params.require(:commentartist).permit(:post, :user_id, :artist_id))
-    if @comment.save
-      redirect_to artist_path(id: @comment.artist_id)
-    end
+    @comment.save
+    @artist = @comment.artist
+    @comments = Commentartist.order("created_at DESC")
   end
 end

@@ -16,7 +16,7 @@ class ArtistsController < ApplicationController
     @schedules = Schedule.where(:artist_id => @artist.id).order(:time)
     @videos = Video.where(:artist_id => @artist.id)
     @comment = current_user.commentartists.new(artist_id: @artist.id)
-    @comments = Commentartist.all
+    @comments = Commentartist.order("created_at DESC")
     @vote = Voteartist.find_by(user_id: current_user.id, artist_id: @artist.id)
   end
 

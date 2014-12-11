@@ -1,4 +1,4 @@
-<% Commentartist.all.each do |comment| %>
+<% @comments.each do |comment| %>
   <% if comment.artist_id == @artist.id %>
     <%= link_to user_path(comment.user) do %>
     <span id="user-name"><strong><%= comment.user.email %>:</strong>
