@@ -1,4 +1,7 @@
 class VoteartistsController < ApplicationController
+
+  before_action :authenticate_user!
+  
   def create
     @vote = Voteartist.new(user_id: current_user.id, artist_id: params[:artist_id])
     @vote.save

@@ -39,33 +39,33 @@
   <div id="map"></div>
 </div>
 <br>
+<% if user_signed_in? %>
+  <div class="row main-my-page">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="comment comment-artist">
+          <div id="comment-artist">
+            <%= render partial: "commentform" %>
+          </div>
+          <div class="vote-artist">
+            <% if @vote.present? %>
+              <%= render partial: "votedown" %>
+            <%else%>
+              <%= render partial: "voteup" %>
+            <%end%>
+              <%= render partial: "votenum" %>
+          </div>
+          <br>
 
-<div class="row main-my-page">
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="comment comment-artist">
-        <div id="comment-artist">
-          <%= render partial: "commentform" %>
-        </div>
-        <div class="vote-artist">
-          <% if @vote.present? %>
-            <%= render partial: "votedown" %>
-          <%else%>
-            <%= render partial: "voteup" %>
-          <%end%>
-            <%= render partial: "votenum" %>
-        </div>
-        <br>
-
-        <div id="artist-comment">
-          <%= render partial: "comment" %>
-        </div>
+          <div id="artist-comment">
+            <%= render partial: "comment" %>
+          </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<br>
+<%end%>
 
 <script>
 $(window).ready(function(){

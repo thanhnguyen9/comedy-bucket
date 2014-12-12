@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+
   def index
 
     if params[:search].present?
@@ -15,9 +16,11 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @schedules = Schedule.where(:artist_id => @artist.id).order(:time)
     @videos = Video.where(:artist_id => @artist.id)
-    @comment = current_user.commentartists.new(artist_id: @artist.id)
     @comments = Commentartist.order("created_at DESC")
-    @vote = Voteartist.find_by(user_id: current_user.id, artist_id: @artist.id)
+    if user_signed_in?
+      @comment = current_user.commentartists.new(artist_id: @artist.id)
+      @vote = Voteartist.find_by(user_id: current_user.id, artist_id: @artist.id)
+    end
   end
 
   def new
