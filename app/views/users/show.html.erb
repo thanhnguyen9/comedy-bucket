@@ -27,17 +27,13 @@
   <br>
 
   <span id="follow">
-    <% if !current_user.friends.include? @user %>
-      <div class="subscribe-a">
-        <%= render partial: "subscribe" %><br>
-      </div>
+    <% if @relationship.present? %>
+        <%= render partial: "unsubscribe" %><br>
     <%else%>
-      <div class="unsubscribe">
-        <%= render partial: "unsubscribe" %>
-      </div>
+        <%= render partial: "subscribe" %>
     <%end%>
   </span>
-
+  
   <div class="col-md-2">
     <div class="thumbnail-on-recommend-side subscribe">
       <%= render partial: "products/side" %>
