@@ -28,9 +28,13 @@
 
   <span id="follow">
     <% if !current_user.friends.include? @user %>
-      <%= button_to "Subcribe", relationships_path(friend_id: @user.id), class: "btn btn-danger" %><br>
+      <div class="subscribe-a">
+        <%= render partial: "subscribe" %><br>
+      </div>
     <%else%>
-      <%= button_to "Unsubcribe", relationship_path(user_id: current_user.id, friend_id: @user.id), method: :delete, class: "btn btn-danger" %>
+      <div class="unsubscribe">
+        <%= render partial: "unsubscribe" %>
+      </div>
     <%end%>
   </span>
 

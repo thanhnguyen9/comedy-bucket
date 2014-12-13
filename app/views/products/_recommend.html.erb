@@ -1,10 +1,17 @@
-<div class="col-md-3 thumbnail-on-recommend-side">
-  <% Video.all.each do |video| %>
-    <%= link_to artist_path(video.artist) do %>
-      <%= image_tag video.thumbnail(video.url), class: "thumbnail-image" %>
-      <span class="artist-name-on-side">
-        <%= video.artist.name %>
-      </span>
-    <%end%>
+<% @products.each do |product| %>
+  <% if product.user_id != current_user.id %>
+    <% @list << product %>
   <%end%>
+<%end%>
+
+<% @list.each do |product| %>
+  <%= link_to product_path(product) do %>
+    <%= image_tag product.thumbnail(product.url), class: "img-responsive" %>
+    <p class="artist-name-on-side">
+      <%= product.title %>
+    </p>
+  <%end%>
+<% end %>
+<div id="paginator">
+  <%= paginate @products, :remote => true if @products %>
 </div>

@@ -8,6 +8,8 @@ class Product < ActiveRecord::Base
   has_many :comments
   has_many :votes
 
+  paginates_per 10
+
   def embed(url)
     youtube = url.split("=").last
     src = "http://www.youtube.com/embed/#{youtube}"

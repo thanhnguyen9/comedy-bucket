@@ -1,1 +1,2 @@
-$('.thumbnail-on-recommend-side').append('<%= escape_javascript render(:partial => "products/side") %>');
+$('.thumbnail-on-recommend-side').append('<%= j render(:partial => "products/recommend") %>');
+$('#paginator').html('<%= escape_javascript(paginate(@products, :remote => true).to_s) %>');
