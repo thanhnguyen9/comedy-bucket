@@ -65,6 +65,24 @@
       </div>
     </div>
   </div>
+<%else%>
+  <div class="row main-my-page">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="comment comment-artist">
+          <p class="p"><%= link_to "Sign in", new_user_session_path, class: "comment_able" %>  or <%= link_to "Sign up",new_user_registration_path, class: "comment_able" %></p>
+          <div class="vote-artist not-sign">
+            <button class= "btn btn-success thumbs-up">
+              <i class="fa fa-thumbs-up"></i>
+            </button>
+            <%= render partial: "votenum" %>
+          </div>
+          <div id="artist-comment not-sign">
+            <%= render partial: "comment" %>
+          </div>
+        </div>
+      </div>
+  </div>
 <%end%>
 
 <script>
