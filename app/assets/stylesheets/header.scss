@@ -56,7 +56,10 @@ header {
       text-transform: uppercase;
       font-weight: 400;
       letter-spacing: 3px;
-      .search-box {margin-top: 2.3em}
+      .search-box {
+        margin-top: 1.6em;
+        height: 2.5em
+        }
   }
 
   .img-full {

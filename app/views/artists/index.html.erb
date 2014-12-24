@@ -6,6 +6,7 @@
   <br>
   <div class="col-md-12">
     <% @artists.each do |artist| %>
+
           <%= link_to "#", class: 'show-artist', data: {showartist: "#modal#{artist.id}"} do %>
             <%= image_tag artist.photo %>
           <%end%>
@@ -19,13 +20,12 @@
                 </div>
                 <div class="modal-body">
                   <div class="row">
-                    <div class="col-sm-7">
-                      <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" src="<%= artist.videos.sample.url %>"></iframe>
-                      </div>
+                    <div class="col-md-5 image">
+                      <%= image_tag artist.photo, class: 'img-responsive' %>
                     </div>
-                    <div class="col-sm-5">
-                      <p class="p"><%= artist.info %></p>
+
+                    <div class="col-md-6">
+                      <p class="p info"><%= artist.info %></p>
                     </div>
                   </div>
                 </div>
