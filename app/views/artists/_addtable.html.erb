@@ -7,8 +7,15 @@
   <% @comedians.each do |comedian| %>
   <tr>
     <td>
-      <%= comedian.name %> <span id="date-request"> on  <%= comedian.created_at.strftime("%b %e, %l:%M %p") %> </span>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= comedian.name %>
+        </div>
+        <div class="col-sm-6">
+          <%= comedian.created_at.strftime("%b %e, %l:%M %p") %>
+        </div>
     </td>
   </tr>
   <%end%>
 </table>
+<%= paginate @comedians %>

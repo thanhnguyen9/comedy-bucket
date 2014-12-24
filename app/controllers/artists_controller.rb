@@ -47,7 +47,7 @@ class ArtistsController < ApplicationController
 
   def add
     @comedian = Comedian.new
-    @comedians = Comedian.all.order("created_at DESC")
+    @comedians = Comedian.all.order("created_at DESC").page params[:page]
   end
 
   private
