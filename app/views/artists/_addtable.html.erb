@@ -4,10 +4,10 @@
       Name
     </th>
   </tr>
-  <% Comedian.all.each do |comedian| %>
+  <% @comedians.each do |comedian| %>
   <tr>
     <td>
-      <%= comedian.name %>
+      <%= comedian.name %> <span id="date-request"> on  <%= comedian.created_at.strftime("%b %e, %l:%M %p") %> </span>
     </td>
   </tr>
   <%end%>

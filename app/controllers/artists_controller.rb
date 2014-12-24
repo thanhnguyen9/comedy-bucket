@@ -1,7 +1,6 @@
 class ArtistsController < ApplicationController
 
   def index
-
     if params[:search].present?
       @artists = Artist.search_by_name(params[:search])
       if @artists.empty?
@@ -48,7 +47,7 @@ class ArtistsController < ApplicationController
 
   def add
     @comedian = Comedian.new
-    @comedians = Comedian.all
+    @comedians = Comedian.all.order("created_at DESC")
   end
 
   private
