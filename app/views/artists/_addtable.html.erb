@@ -1,18 +1,24 @@
 <table class="table table-bordered">
   <tr>
     <th>
-      Name
+      Name - Date - Update
     </th>
+
   </tr>
   <% @comedians.each do |comedian| %>
   <tr>
     <td>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <%= comedian.name %>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <%= comedian.created_at.strftime("%b %e, %l:%M %p") %>
+        </div>
+        <div class="col-sm-1">
+          <% if comedian.update_comedian == true %>
+            <i class="fa fa-check-square-o"></i>
+          <%end%>
         </div>
     </td>
   </tr>
