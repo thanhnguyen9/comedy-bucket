@@ -7,7 +7,7 @@ class ArtistsController < ApplicationController
         redirect_to add_path
       end
     else
-      @artists = Artist.order(:name).includes(:videos)
+      @artists = Artist.order("likes DESC")
     end
   end
 
