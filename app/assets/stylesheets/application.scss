@@ -46,7 +46,7 @@ body {
 img {
   width: 18em;
   margin-bottom: 1.9em;
-  margin-left: 1.8em
+  margin-left: 1.8em;
     }
 
 .main-my-page {
@@ -77,9 +77,9 @@ iframe {margin-top: 1.5em; margin-left: 0.9em; margin-right: 1em; margin-bottom:
   padding: 1em;
 }
 button.btn.btn-success.upload{margin-top: 1.6em}
-.col-md-5.image {
+.col-md-6.image {
   border-right: 1px solid rgb(221, 209, 209);
-  margin-left: 2em
+  // margin-left: 2em;
 }
 span#date-request {
   margin-left: 8em;
