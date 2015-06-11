@@ -3,7 +3,9 @@ footer {
     text-align: center;
     background: white;
     margin-top: 1.5em;
-    margin-left: -2em
+    // position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 footer span.copyright {
