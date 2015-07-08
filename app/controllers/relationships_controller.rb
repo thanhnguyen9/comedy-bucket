@@ -15,5 +15,5 @@ class RelationshipsController < ApplicationController
     @user = User.find_by(id: @relationship.user_id)
     @relationship.delete
   end
-
+  
 end
